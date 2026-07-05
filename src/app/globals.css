@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/* ========================================================
+   1. TOKEN WARNA SEMANTIK (CSS VARIABLES)
+   ======================================================== */
+:root {
+  /* Page & Layout */
+  --color-page-bg: #f8fafc;           /* Latar belakang aplikasi (Slate 50) */
+  --color-sidebar-bg: #ffffff;        /* Latar belakang Sidebar */
+  
+  /* Component Containers (Card, Modal, Popover) */
+  --color-component-bg: #ffffff;      /* Latar belakang Card & Modal */
+  --color-component-hover: #f1f5f9;   /* Hover state untuk baris tabel / list (Slate 100) */
+  
+  /* Borders & Dividers */
+  --color-border-subtle: #e2e8f0;     /* Border tipis untuk divider tabel & card (Slate 200) */
+  --color-border-strong: #cbd5e1;     /* Border untuk form input statis (Slate 300) */
+
+  /* Typography (Teks) */
+  --color-text-main: #0f172a;         /* Teks utama / Judul (Slate 900) */
+  --color-text-muted: #64748b;        /* Teks penjelasan / Sub-judul (Slate 500) */
+  --color-text-disabled: #94a3b8;     /* Teks untuk state non-aktif (Slate 400) */
+
+  /* Brand Role / Badges / Actions */
+  --color-role-auth: #2563eb;         /* Blue 600 */
+  --color-role-tukang: #ea580c;       /* Orange 600 */
+  --color-role-supervisor: #ea580c;       /* Orange 600 */
+  --color-role-admin: #4f46e5;        /* Indigo 600 */
+  --color-role-owner: #7c3aed;        /* Purple 600 */
+  --color-role-success: #10b981;      /* Emerald 500 */
+  --color-role-error: #ef4444;        /* Red 500 */
+}
+
+/* Dark Mode Configuration */
+.dark, [data-theme="dark"] {
+  /* Page & Layout */
+  --color-page-bg: #090d16;           /* Slate 950 Modifikasi (Midnight Blue Deep) */
+  --color-sidebar-bg: #0f172a;        /* Sidebar sedikit lebih terang dari page bg (Slate 900) */
+  
+  /* Component Containers (Card, Modal, Popover) */
+  --color-component-bg: #111827;      /* Latar belakang Card & Modal (Gray 900) */
+  --color-component-hover: #1f2937;   /* Hover state baris tabel / list (Gray 800) */
+  
+  /* Borders & Dividers */
+  --color-border-subtle: #1f2937;     /* Border tipis gelap (Gray 800) */
+  --color-border-strong: #374151;     /* Border form input (Gray 700) */
+
+  /* Typography (Teks) */
+  --color-text-main: #f8fafc;         /* Teks utama (Slate 50) */
+  --color-text-muted: #94a3b8;        /* Teks sekunder (Slate 400) */
+  --color-text-disabled: #4b5563;     /* Teks non-aktif (Gray 600) */
+
+  /* Brand Role / Badges / Actions (Warna pastel cerah agar kontras) */
+  --color-role-auth: #3b82f6;         /* Blue 500 */
+  --color-role-tukang: #f97316;       /* Orange 500 */
+  --color-role-admin: #6366f1;        /* Indigo 500 */
+  --color-role-owner: #a855f7;        /* Purple 500 */
+  --color-role-success: #34d399;      /* Emerald 400 */
+  --color-role-error: #f87171;        /* Red 400 */
+}
+
+/* ========================================================
+   2. REGISTRASI KE SYSTEM @THEME TAILWIND v4
+   ======================================================== */
+@theme {
+  /* Override Default Background & Foreground Aplikasi */
+  --color-background: var(--color-page-bg);
+  --color-foreground: var(--color-text-main);
+
+  /* Custom UI Component Classes */
+  --color-sidebar: var(--color-sidebar-bg);
+  --color-card: var(--color-component-bg);
+  --color-ui-hover: var(--color-component-hover);
+  
+  /* Borders */
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-strong: var(--color-border-strong);
+
+  /* Typography */
+  --color-main: var(--color-text-main);
+  --color-muted: var(--color-text-muted);
+  --color-disabled: var(--color-text-disabled);
+
+  /* Functional Status / Roles */
+  --color-brand-auth: var(--color-role-auth);
+  --color-brand-tukang: var(--color-role-tukang);
+  --color-brand-admin: var(--color-role-admin);
+  --color-brand-owner: var(--color-role-owner);
+  --color-brand-success: var(--color-role-success);
+  --color-brand-error: var(--color-role-error);
+
+  /* Reusable Infinite Loading Animation v4 */
+  --animate-infinite-loading: loading-bar 1.5s infinite linear;
+  --color-navbar-bg: color-mix(in srgb, var(--color-component-bg) 80%, transparent);
+  
+  @keyframes loading-bar {
+    0% { transform: translateX(-100%); width: 30%; }
+    50% { transform: translateX(100%); width: 50%; }
+    100% { transform: translateX(250%); width: 30%; }
+  }
+}
+
+@theme {
+  --animate-infinite-loading: loading-bar 1.5s infinite linear;
+
+  @keyframes loading-bar {
+    0% {
+      transform: translateX(-100%);
+      width: 30%;
+    }
+    50% {
+      transform: translateX(100%);
+      width: 50%;
+    }
+    100% {
+      transform: translateX(250%);
+      width: 30%;
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}

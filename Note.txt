@@ -1,0 +1,21 @@
+src/
+├── app/
+│   ├── api/
+│   │   └── barang/
+│   │       └── route.ts       <-- API untuk CRUD Barang
+│   ├── tukang/
+│   │   └── page.tsx           <-- Dashboard Tukang (Input PO)
+│   ├── admin/
+│   │   └── page.tsx           <-- Dashboard Admin (Verifikasi Fisik Lapangan)
+│   ├── owner/
+│   │   └── page.tsx           <-- Dashboard Owner (Final Pembayaran & Edit Total)
+│   ├── layout.tsx
+│   └── page.tsx               <-- Halaman Utama / Landing Page / Login
+├── components/
+│   └── global/                <-- Komponen yang kita buat sebelumnya (Modal, Toast, Theme)
+│       ├── Modal.tsx
+│       ├── ThemeProvider.tsx
+│       ├── ThemeToggle.tsx
+│       └── Toast.tsx
+└── lib/
+    └── mongodb.ts             <-- Koneksi DB
