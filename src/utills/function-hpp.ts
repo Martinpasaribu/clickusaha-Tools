@@ -1,14 +1,6 @@
 import { CONVERSION_FACTORS } from "@/constants/unit";
+import { BiayaVariabelItem, ChartSimulationRow, HppEngineResult, ProjectionState } from "@/types/hpp";
 
-export interface BiayaVariabelItem {
-  id: string;
-  namaBahan: string;
-  takaranPakai: number;
-  satuanPakai: string;
-  pembelianJumlah: number;
-  pembelianSatuan: string;
-  pembelianHarga: number;
-}
 
 const normalizeToUnitDasar = (nilai: number, satuan: string): number => {
   const factor = CONVERSION_FACTORS[satuan.toLowerCase()] || 1;
