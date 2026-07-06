@@ -5,7 +5,7 @@ import { UNIT_OPTIONS } from "@/constants/unit";
 
 interface SelectOption {
   label: string;
-  value: string | number;
+  value: string ;
 }
 
 interface InputFieldProps {
@@ -20,7 +20,7 @@ interface InputFieldProps {
 interface SelectFieldProps {
   label: string;
   value: string | number;
-  onChange: (val: string) => void;
+  onChange: (val: string | number) => void;
   options: SelectOption[];
 }
 
@@ -69,18 +69,33 @@ export const SelectField = ({ label, value, onChange, options }: SelectFieldProp
 );
 
 
+interface UnitSelectProps {
+  label: string;
+  value: string;
+  onChange: (val: string) => void;
+}
 
-export const UnitSelect = ({ label, value, onChange }: any) => (
+export const UnitSelect = ({
+  label,
+  value,
+  onChange,
+}: UnitSelectProps) => (
   <div className="w-full">
-    <label className="block text-[10px] font-bold text-muted uppercase mb-1">{label}</label>
-    <select 
+    <label className="block text-[10px] font-bold text-muted uppercase mb-1">
+      {label}
+    </label>
+
+    <select
       className="w-full bg-page-bg border border-border-strong rounded-lg px-2 py-2.5 text-sm outline-none"
-      value={value} 
+      value={value}
       onChange={(e) => onChange(e.target.value)}
     >
       {UNIT_OPTIONS.map((opt) => (
-        // Gunakan opt.label sebagai key karena label adalah teks unik
-        <option key={opt.label} value={opt.value} disabled={opt.disabled}>
+        <option
+          key={opt.label}
+          value={opt.value}
+          disabled={opt.disabled}
+        >
           {opt.label}
         </option>
       ))}

@@ -421,7 +421,7 @@ product,
             x={targetVal} 
             stroke="var(--color-role-admin)" 
             strokeDasharray="3 3"
-            isFront={true}
+            // isFront={true}
             label={{ 
                 value: `TARGET (${targetVal})`, 
                 position: 'top', 
