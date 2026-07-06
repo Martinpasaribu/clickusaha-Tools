@@ -163,16 +163,16 @@ product,
                 <div className="flex items-center gap-2">
                 <button
                     onClick={() => setPersentaseSensitivitas((p) => Math.max(-50, p - 5))}
-                    className="px-2 py-1 bg-white dark:bg-slate-800 border border-border-strong rounded-lg text-xs font-bold hover:bg-ui-hover transition-colors cursor-pointer"
+                    className="px-2 py-1  border border-border-strong rounded-lg text-xs font-bold hover:bg-ui-hover transition-colors cursor-pointer"
                 >
                     -5%
                 </button>
-                <span className="font-mono bg-white dark:bg-slate-900 border border-border-strong px-3 py-1 rounded-lg text-xs font-bold text-brand-admin">
+                <span className="font-mono  border border-border-strong px-3 py-1 rounded-lg text-xs font-bold text-brand-admin">
                     {persentaseSensitivitas >= 0 ? `+${persentaseSensitivitas}` : persentaseSensitivitas}% Impact
                 </span>
                 <button
                     onClick={() => setPersentaseSensitivitas((p) => Math.min(100, p + 5))}
-                    className="px-2 py-1 bg-white dark:bg-slate-800 border border-border-strong rounded-lg text-xs font-bold hover:bg-ui-hover transition-colors cursor-pointer"
+                    className="px-2 py-1 border border-border-strong rounded-lg text-xs font-bold hover:bg-ui-hover transition-colors cursor-pointer"
                 >
                     +5%
                 </button>
