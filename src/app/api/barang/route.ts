@@ -60,9 +60,11 @@ export async function POST(request: Request) {
       }
     }
 
-    const nativeDbInstance = tenantDb.db;
-    const generatedCode = await GenerateCustomItemCode(nativeDbInstance, body.name, formattedManualDate);
-    
+    const generatedCode = await GenerateCustomItemCode(
+        tenantDb.db!,
+        body.name,
+        formattedManualDate
+    );
     const finalDataBarang = createDefaultReconciliationItem({
       ...body,
       code: generatedCode,
