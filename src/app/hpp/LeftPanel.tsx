@@ -1,18 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import { InputField, SelectField, UnitSelect } from './FormInput';
+import { BiayaVariabelItem, ProjectionState } from '@/types/hpp';
 
 interface LeftPanelProps {
   product: any;
   setProduct: (data: any) => void;
-  biayaVariabel: any[];
+  biayaVariabel: BiayaVariabelItem[];
   projection: any;
-  setProjection: (data: any) => void;
+  setProjection: (data: ProjectionState) => void;
   financialResult: any;
   handleImageUpload: (e: any) => void;
   handleAddField: () => void;
   handleRemoveField: (id: string) => void;
-  handleUpdateField: (id: string, field: string, value: any) => void;
+  handleUpdateField: (
+    id: string,
+    field: keyof BiayaVariabelItem,
+    value: string | number
+  ) => void;
+
   formatIDR: (val: number) => string;
 }
 

@@ -78,3 +78,31 @@ export interface ChartSimulationRow {
   "Total Biaya": number;
   "Laba Bersih": number;
 }
+
+
+// interface LeftPanelProps {
+//   product: ProductState;
+//   setProduct: React.Dispatch<React.SetStateAction<ProductState>>;
+
+//   biayaVariabel: BiayaVariabelItem[];
+
+//   projection: ProjectionState;
+//   setProjection: React.Dispatch<React.SetStateAction<ProjectionState>>;
+
+//   financialResult: HppEngineResult;
+
+//   handleImageUpload: (
+//     e: React.ChangeEvent<HTMLInputElement>
+//   ) => void;
+
+//   handleAddField: () => void;
+//   handleRemoveField: (id: string) => void;
+
+//   handleUpdateField: (
+//     id: string,
+//     field: keyof BiayaVariabelItem,
+//     value: string | number
+//   ) => void;
+
+//   formatIDR: (val: number) => string;
+// }

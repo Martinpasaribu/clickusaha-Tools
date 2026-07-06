@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import { BiayaVariabelItem, hitungSistemHPP, ProductState, ProjectionState } from "@/utills/function-hpp";
+import { hitungSistemHPP, ProductState,  } from "@/utills/function-hpp";
 import React, { useState, useMemo, useEffect } from "react";
 
 import { RightPanelMetrics } from "./RightPanelMetrics";
 import { InputField, SelectField } from "./FormInput";
 import { LeftPanel } from "./LeftPanel";
+import { BiayaVariabelItem, ProjectionState } from "@/types/hpp";
 
 
 
@@ -75,12 +76,14 @@ export default function App() {
   };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setProduct((prev) => ({
-        ...prev,
-        image: URL.createObjectURL(e.target.files[0])
-      }));
-    }
+    const files = e.target.files;
+
+    if (!files || files.length === 0) return;
+
+    setProduct((prev) => ({
+      ...prev,
+      image: URL.createObjectURL(files[0]),
+    }));
   };
 
 return (
@@ -113,7 +116,7 @@ return (
         product={product}
         setProduct={setProduct}
         biayaVariabel={biayaVariabel}
-        setBiayaVariabel={setBiayaVariabel}
+        // setBiayaVariabel={setBiayaVariabel}
         projection={projection}
         setProjection={setProjection}
         financialResult={financialResult}
